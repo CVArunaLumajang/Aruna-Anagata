@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Aruna Anagata - Construction Consulting</title>
+    
+    <!-- Fonts: Montserrat (Headings) and Roboto (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #1a2a40; /* Navy Blue */
+            --secondary-color: #f39c12; /* Safety Orange */
+            --text-dark: #333333;
+            --text-light: #f4f4f4;
+            --bg-light: #ffffff;
+            --bg-gray: #f8f9fa;
+            --border-color: #ddd;
+            --success-color: #27ae60;
+            --error-color: #c0392b;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Components --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #d68910;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title .divider {
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* --- Header & Nav --- */
+        header {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- Login Button Styles --- */
+        .btn-login {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .btn-login:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        /* User Profile Menu (Visible after login) */
+        .user-menu {
+            position: relative;
+            display: none; /* Hidden by default */
+            align-items: center;
+            gap: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .user-menu.active {
+            display: flex;
+        }
+
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: linear-gradient(rgba(26, 42, 64, 0.8), rgba(26, 42, 64, 0.8)), url('https://picsum.photos/seed/construction/1920/1080.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* --- Profile Section --- */
+        #profile {
+            background-color: var(--bg-light);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .profile-text h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .values-list {
+            margin-top: 20px;
+        }
+
+        .values-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .values-list i {
+            color: var(--success-color);
+        }
+
+        /* --- Services Overview --- */
+        #services {
+            background-color: var(--bg-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* --- Interactive Calculator / Wizard --- */
+        #calculator {
+            background-color: var(--primary-color);
+            color: white;
+            position: relative;
+        }
+
+        #calculator .section-title h2, #calculator .section-title p {
+            color: white;
+        }
+
+        .wizard-container {
+            background: white;
+            color: var(--text-dark);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .step-indicators {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .step-indicators::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #eee;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .step-dot {
+            width: 30px;
+            height: 30px;
+            background: #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .step-dot.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .step-dot.completed {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .step-content {
+            flex-grow: 1;
+            margin-bottom: 30px;
+            display: none; 
+            animation: fadeIn 0.5s ease;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .selection-card {
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .selection-card:hover, .selection-card.selected {
+            border-color: var(--secondary-color);
+            background-color: rgba(243, 156, 18, 0.05);
+        }
+
+        .selection-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .package-card {
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .package-card.selected {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.3);
+        }
+
+        .package-card h4 {
+            color: var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .package-features {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .package-features li {
+            margin-bottom: 5px;
+        }
+
+        .wizard-actions {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .btn-prev {
+            background-color: #95a5a6;
+        }
+
+        .summary-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col i {
+            width: 20px;
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* --- Toast Notification --- */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 2000;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i {
+            font-size: 1.2rem;
+        }
+        .toast.success i { color: var(--success-color); }
+        .toast.error i { color: var(--error-color); }
+
+        /* --- Login Modal Styles --- */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 3000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.6); 
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--primary-color);
+                padding: 20px;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wizard-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-hard-hat"></i> CV Aruna Anagata
+                </div>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="#hero">Home</a>
+                    <a href="#profile">Profile</a>
+                    <a href="#services">Services</a>
+                    <a href="#calculator" class="btn" style="padding: 8px 20px;">Start Project</a>
+                    <a href="#contact">Contact</a>
+                    
+                    <!-- Login Button (Visible when logged OUT) -->
+                    <div class="btn-login" id="btnLoginTrigger" onclick="auth.openModal()">
+                        <i class="fas fa-user-circle"></i> Login
+                    </div>
+
+                    <!-- User Menu (Visible when logged IN) -->
+                    <div class="user-menu" id="userMenu" onclick="auth.logout()">
+                        <div class="user-avatar" id="userInitial">U</div>
+                        <span id="userNameDisplay">User</span>
+                        <i class="fas fa-sign-out-alt" title="Logout" style="font-size: 0.8rem; opacity: 0.7;"></i>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="auth.closeModal()">&times;</span>
+            <h2>Customer Access</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #666; font-size: 0.9rem;">
+                Please enter your details to proceed.
+            </p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="authName" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="authEmail" class="form-control" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone (WhatsApp)</label>
+                    <input type="tel" id="authPhone" class="form-control" placeholder="+62 812..." required>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Login / Continue</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <h1>Building Your Vision With<br>Quality & Precision</h1>
+            <p>Professional construction consulting services. From planning to technical documentation, we ensure high customer satisfaction for every project.</p>
+            <a href="#calculator" class="btn">Get Free Consultation</a>
+            <a href="#profile" class="btn btn-outline" style="color: white; border-color: white; margin-left: 10px;">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Company Profile -->
+    <section id="profile">
+        <div class="container">
+            <div class="section-title">
+                <h2>Company Profile</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="profile-grid">
+                <img src="https://picsum.photos/seed/architect/600/400.jpg" alt="CV Aruna Anagata Team" class="profile-img">
+                <div class="profile-text">
+                    <h3>Who We Are</h3>
+                    <p>CV Aruna Anagata is a leading construction consulting company dedicated to providing top-tier engineering and design solutions. Located in Lumajang, Indonesia, we serve clients with a commitment to professionalism and technical excellence.</p>
+                    <br>
+                    <h3>Vision & Mission</h3>
+                    <p><strong>Vision:</strong> To be a trusted partner in construction development, recognized for integrity and quality.</p>
+                    <p><strong>Mission:</strong> To deliver customer-oriented services that combine technical expertise with practical solutions.</p>
+                    
+                    <ul class="values-list">
+                        <li><i class="fas fa-check-circle"></i> Quality-Oriented Services</li>
+                        <li><i class="fas fa-check-circle"></i> High Customer Satisfaction</li>
+                        <li><i class="fas fa-check-circle"></i> Professional Project Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expertise</h2>
+                <div class="divider"></div>
+                <p>We specialize in comprehensive design and planning services.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h4>Building (Gedung)</h4>
+                    <p>Complete structural and architectural design for residential and commercial complexes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-water"></i></div>
+                    <h4>Drainage (Drainase)</h4>
+                    <p>Sustainable water management systems for effective flood control and sanitation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-road"></i></div>
+                    <h4>Road (Jalan)</h4>
+                    <p>Infrastructure planning and road design for durability and smooth connectivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator / Wizard -->
+    <section id="calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plan Your Project</h2>
+                <div class="divider"></div>
+                <p>Select your requirements and receive a tailored consultation.</p>
+            </div>
+
+            <div class="wizard-container">
+                <div class="step-indicators">
+                    <div class="step-dot active" data-step="1">1</div>
+                    <div class="step-dot" data-step="2">2</div>
+                    <div class="step-dot" data-step="3">3</div>
+                    <div class="step-dot" data-step="4">4</div>
+                    <div class="step-dot" data-step="5">5</div>
+                </div>
+
+                <!-- Step 1: Main Category -->
+                <div class="step-content active" id="step-1">
+                    <h3>Select Service Category</h3>
+                    <p class="mb-4">What type of construction project are you planning?</p>
+                    <div class="selection-grid">
+                        <div class="selection-card" onclick="wizard.selectCategory('Gedung', this)">
+                            <i class="fas fa-building"></i>
+                            <h4>Building (Gedung)</h4>
+                        </div>
+                        <div class="selection-card" onclick="wizard.selectCategory('Drainase', this)">
+                            <i class="fas fa-water"></i>
+                            <h4>Drainage (Drainase)</h4>
+                        </div>
+                        <div class="selection-card" onclick="wizard.selectCategory('Jalan', this)">
+                            <i class="fas fa-road"></i>
+                            <h4>Road (Jalan)</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Building Type -->
+                <div class="step-content" id="step-2">
+                    <h3>Building Type</h3>
+                    <p>Is this a residential or non-residential building?</p>
+                    <div class="selection-grid">
+                        <div class="selection-card" onclick="wizard.selectBuildingType('Hunian', this)">
+                            <i class="fas fa-home"></i>
+                            <h4>Residential (Hunian)</h4>
+                        </div>
+                        <div class="selection-card" onclick="wizard.selectBuildingType('Non-Hunian', this)">
+                            <i class="fas fa-city"></i>
+                            <h4>Non-Residential</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2.5: Non-Residential Submenu -->
+                <div class="step-content" id="step-2b">
+                    <h3>Specify Non-Residential Type</h3>
+                    <p>Select the specific category for your building.</p>
+                    <div class="selection-grid">
+                        <div class="selection-card" onclick="wizard.selectNonResType('Office Building', this)">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Office Building</h4>
+                        </div>
+                        <div class="selection-card" onclick="wizard.selectNonResType('Warehouse', this)">
+                            <i class="fas fa-warehouse"></i>
+                            <h4>Warehouse</h4>
+                        </div>
+                        <div class="selection-card" onclick="wizard.selectNonResType('Shop / Ruko', this)">
+                            <i class="fas fa-store"></i>
+                            <h4>Shop / Shophouse</h4>
+                        </div>
+                        <div class="selection-card" onclick="wizard.selectNonResType('Server Room', this)">
+                            <i class="fas fa-server"></i>
+                            <h4>Server / Tech Facility</h4>
+                        </div>
+                        <div class="selection-card" onclick="wizard.selectNonResType('Other Custom', this)">
+                            <i class="fas fa-drafting-compass"></i>
+                            <h4>Other Custom</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Parameters -->
+                <div class="step-content" id="step-3">
+                    <h3>Project Parameters</h3>
+                    <div class="form-group">
+                        <label>Planned Area (Square Meters)</label>
+                        <input type="number" id="inputArea" class="form-control" placeholder="e.g. 150" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Expected Design Duration (Weeks)</label>
+                        <input type="number" id="inputDuration" class="form-control" placeholder="e.g. 4" min="1">
+                    </div>
+                </div>
+
+                <!-- Step 4: Package Selection -->
+                <div class="step-content" id="step-4">
+                    <h3>Choose Design Package</h3>
+                    <div class="package-card" onclick="wizard.selectPackage('Package 1: Basic', this)">
+                        <h4>Package 1: Basic</h4>
+                        <ul class="package-features">
+                            <li>Basic Floor Plans</li>
+                            <li>Standard Layout</li>
+                            <li>2D Views</li>
+                        </ul>
+                    </div>
+                    <div class="package-card" onclick="wizard.selectPackage('Package 2: Standard', this)">
+                        <h4>Package 2: Standard <span style="color:var(--secondary-color)">(Popular)</span></h4>
+                        <ul class="package-features">
+                            <li>Detailed Floor Plans</li>
+                            <li>3D Renderings (Exterior)</li>
+                            <li>Material Suggestions</li>
+                            <li>Structural Basic Calculation</li>
+                        </ul>
+                    </div>
+                    <div class="package-card" onclick="wizard.selectPackage('Package 3: Premium', this)">
+                        <h4>Package 3: Premium</h4>
+                        <ul class="package-features">
+                            <li>Comprehensive Technical Drawings</li>
+                            <li>Full 3D Walkthrough/Interior</li>
+                            <li>RAB (Cost Estimate)</li>
+                            <li>MEP (Electrical/Plumbing) Plans</li>
+                            <li>Permit-ready Documents</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 5: Client Data & Summary -->
+                <div class="step-content" id="step-5">
+                    <h3>Final Details</h3>
+                    
+                    <div class="summary-box">
+                        <div class="summary-item"><span class="summary-label">Category:</span> <span id="sumCategory">-</span></div>
+                        <div class="summary-item"><span class="summary-label">Type:</span> <span id="sumType">-</span></div>
+                        <div class="summary-item"><span class="summary-label">Area:</span> <span id="sumArea">-</span> m²</div>
+                        <div class="summary-item"><span class="summary-label">Duration:</span> <span id="sumDuration">-</span> Weeks</div>
+                        <div class="summary-item"><span class="summary-label">Package:</span> <span id="sumPackage">-</span></div>
+                    </div>
+
+                    <div id="clientInputs">
+                        <p style="margin-bottom:15px; font-size: 0.9rem; color: #666;">
+                            Please confirm your contact details below.
+                        </p>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="inputName" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Active Phone Number (WhatsApp)</label>
+                            <input type="tel" id="inputPhone" class="form-control" placeholder="+62 ...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <div class="step-content" id="step-success" style="text-align: center;">
+                    <i class="fas fa-check-circle" style="font-size: 4rem; color: var(--success-color); margin-bottom: 20px;"></i>
+                    <h3>Submission Successful!</h3>
+                    <p>Thank you for choosing CV Aruna Anagata.</p>
+                    <p>Your project data has been sent. Our team will contact you via WhatsApp/Email shortly.</p>
+                    <button class="btn" onclick="location.reload()" style="margin-top: 20px;">Back to Home</button>
+                </div>
+
+                <div class="wizard-actions" id="wizardNav">
+                    <button class="btn btn-prev" onclick="wizard.prevStep()" id="btnPrev" disabled>Back</button>
+                    <button class="btn" onclick="wizard.nextStep()" id="btnNext">Next Step</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>CV Aruna Anagata</h4>
+                    <p>Quality-oriented construction consulting services dedicated to your vision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Perum Sumber Rejeki No. B.6, Sumberejo Village, Lumajang, Indonesia</li>
+                        <li><i class="fas fa-user"></i> Buyung Kurnia Sandy</li>
+                        <li><i class="fab fa-whatsapp"></i> +62 815-9996-441</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Business Hours</h4>
+                    <ul>
+                        <li>Mon - Fri: 08:00 - 17:00</li>
+                        <li>Saturday: 08:00 - 14:00</li>
+                        <li>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 CV Aruna Anagata. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toast" class="toast">
+        <i class="fas fa-info-circle"></i>
+        <span id="toastMsg">Message goes here</span>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // --- Auth System ---
+        const auth = {
+            user: null,
+
+            init: function() {
+                // Check localStorage
+                const storedUser = localStorage.getItem('arunaUser');
+                if (storedUser) {
+                    this.user = JSON.parse(storedUser);
+                    this.updateUI(true);
+                }
+
+                // Modal Close on Outside Click
+                window.onclick = function(event) {
+                    const modal = document.getElementById('loginModal');
+                    if (event.target == modal) {
+                        auth.closeModal();
+                    }
+                }
+
+                // Handle Login Form
+                document.getElementById('loginForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('authName').value;
+                    const email = document.getElementById('authEmail').value;
+                    const phone = document.getElementById('authPhone').value;
+
+                    if(name && email && phone) {
+                        this.login({ name, email, phone });
+                    }
+                });
+            },
+
+            openModal: function() {
+                const modal = document.getElementById('loginModal');
+                modal.style.display = 'flex';
+                // Small timeout to allow display:flex to apply before adding opacity class for transition
+                setTimeout(() => modal.classList.add('show'), 10);
+            },
+
+            closeModal: function() {
+                const modal = document.getElementById('loginModal');
+                modal.classList.remove('show');
+                setTimeout(() => modal.style.display = 'none', 300);
+            },
+
+            login: function(userData) {
+                this.user = userData;
+                localStorage.setItem('arunaUser', JSON.stringify(userData));
+                this.closeModal();
+                this.updateUI(true);
+                showToast(`Welcome back, ${userData.name}!`);
+                
+                // If wizard is at step 5, update the fields immediately
+                if (wizard.step === 5) {
+                    wizard.prefillClientData();
+                }
+            },
+
+            logout: function() {
+                this.user = null;
+                localStorage.removeItem('arunaUser');
+                this.updateUI(false);
+                showToast("You have been logged out.", "success");
+            },
+
+            updateUI: function(isLoggedIn) {
+                const btnLogin = document.getElementById('btnLoginTrigger');
+                const userMenu = document.getElementById('userMenu');
+                const nameDisplay = document.getElementById('userNameDisplay');
+                const userInitial = document.getElementById('userInitial');
+
+                if (isLoggedIn && this.user) {
+                    btnLogin.style.display = 'none';
+                    userMenu.classList.add('active');
+                    nameDisplay.textContent = this.user.name;
+                    userInitial.textContent = this.user.name.charAt(0).toUpperCase();
+                } else {
+                    btnLogin.style.display = 'flex';
+                    userMenu.classList.remove('active');
+                }
+            }
+        };
+
+        // --- UI Interactions ---
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toastMsg');
+            const icon = toast.querySelector('i');
+            
+            msgEl.innerText = message;
+            toast.className = `toast show ${type}`;
+            
+            if(type === 'success') icon.className = 'fas fa-check-circle';
+            else icon.className = 'fas fa-exclamation-circle';
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // --- Wizard Logic ---
+        const wizard = {
+            step: 1,
+            totalSteps: 5,
+            data: {
+                category: '',
+                subCategory: '',
+                detailType: '',
+                area: '',
+                duration: '',
+                package: '',
+                clientName: '',
+                clientEmail: '',
+                clientPhone: ''
+            },
+
+            updateUI: function() {
+                document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+                
+                let stepId = `step-${this.step}`;
+                
+                if (this.step === 2) {
+                    if (this.data.category === 'Gedung') {
+                        stepId = 'step-2'; 
+                    } else {
+                        this.data.subCategory = 'General';
+                        this.data.detailType = 'Standard';
+                        this.step = 3;
+                        stepId = 'step-3'; 
+                    }
+                }
+
+                const target = document.getElementById(stepId);
+                if (target) {
+                    target.classList.add('active');
+                    // If entering step 5, try to prefill data
+                    if(this.step === 5) this.prefillClientData();
+                }
+
+                document.querySelectorAll('.step-dot').forEach((dot, index) => {
+                    if (index + 1 === this.step) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                    
+                    if (index + 1 < this.step) dot.classList.add('completed');
+                    else dot.classList.remove('completed');
+                });
+
+                document.getElementById('btnPrev').disabled = (this.step === 1);
+                
+                const nextBtn = document.getElementById('btnNext');
+                if (this.step === 5) {
+                    nextBtn.innerHTML = 'Submit Data';
+                    nextBtn.style.backgroundColor = 'var(--success-color)';
+                } else {
+                    nextBtn.innerHTML = 'Next Step';
+                    nextBtn.style.backgroundColor = '';
+                }
+
+                if (document.getElementById('step-success').classList.contains('active')) {
+                    document.getElementById('wizardNav').style.display = 'none';
+                }
+            },
+
+            prefillClientData: function() {
+                if (auth.user) {
+                    document.getElementById('inputName').value = auth.user.name;
+                    document.getElementById('inputEmail').value = auth.user.email;
+                    document.getElementById('inputPhone').value = auth.user.phone;
+                    
+                    // Visual feedback that fields are prefilled
+                    const inputs = document.querySelectorAll('#clientInputs input');
+                    inputs.forEach(input => {
+                        input.style.backgroundColor = '#f0f8ff'; // Light blue tint
+                        input.readOnly = true; // Optional: make read-only if logged in
+                    });
+                }
+            },
+
+            selectCategory: function(val, el) {
+                this.data.category = val;
+                this.highlightSelection(el);
+                setTimeout(() => this.nextStep(), 300);
+            },
+
+            selectBuildingType: function(val, el) {
+                this.data.subCategory = val;
+                this.highlightSelection(el);
+                if (val === 'Non-Hunian') {
+                    this.step = 2; 
+                    document.querySelectorAll('.step-content').forEach(e => e.classList.remove('active'));
+                    document.getElementById('step-2b').classList.add('active');
+                } else {
+                    setTimeout(() => this.nextStep(), 300);
+                }
+            },
+
+            selectNonResType: function(val, el) {
+                this.data.detailType = val;
+                this.highlightSelection(el);
+                setTimeout(() => this.nextStep(), 300);
+            },
+
+            selectPackage: function(val, el) {
+                this.data.package = val;
+                document.querySelectorAll('.package-card').forEach(c => c.classList.remove('selected'));
+                el.classList.add('selected');
+            },
+
+            highlightSelection: function(el) {
+                el.parentNode.querySelectorAll('.selection-card').forEach(c => c.classList.remove('selected'));
+                el.classList.add('selected');
+            },
+
+            validateStep: function() {
+                if (this.step === 1) return !!this.data.category;
+                
+                if (this.step === 2) {
+                    if (this.data.category === 'Gedung') return !!this.data.subCategory;
+                    return true;
+                }
+
+                const step2b = document.getElementById('step-2b');
+                if (step2b.classList.contains('active')) {
+                    return !!this.data.detailType;
+                }
+
+                if (this.step === 3) {
+                    const area = document.getElementById('inputArea').value;
+                    const duration = document.getElementById('inputDuration').value;
+                    if (area && duration) {
+                        this.data.area = area;
+                        this.data.duration = duration;
+                        return true;
+                    }
+                    showToast("Please enter both Area and Duration", "error");
+                    return false;
+                }
+
+                if (this.step === 4) {
+                    if (!this.data.package) {
+                        showToast("Please select a package", "error");
+                        return false;
+                    }
+                    return true;
+                }
+
+                if (this.step === 5) {
+                    // Only validate inputs if user is NOT logged in (since logged in users are pre-filled)
+                    if (!auth.user) {
+                        const name = document.getElementById('inputName').value;
+                        const email = document.getElementById('inputEmail').value;
+                        const phone = document.getElementById('inputPhone').value;
+                        if (name && email && phone) {
+                            this.data.clientName = name;
+                            this.data.clientEmail = email;
+                            this.data.clientPhone = phone;
+                        } else {
+                            showToast("Please complete all contact details", "error");
+                            return false;
+                        }
+                    } else {
+                        // Use data from auth object
+                        this.data.clientName = auth.user.name;
+                        this.data.clientEmail = auth.user.email;
+                        this.data.clientPhone = auth.user.phone;
+                    }
+                    this.updateSummary();
+                    return true;
+                }
+
+                return true;
+            },
+
+            nextStep: function() {
+                if (!this.validateStep()) return;
+
+                const step2b = document.getElementById('step-2b');
+                if (step2b.classList.contains('active')) {
+                    this.step = 3;
+                    this.updateUI();
+                    return;
+                }
+
+                if (this.step === 2 && this.data.category === 'Gedung' && this.data.subCategory === 'Non-Hunian') {
+                    // Logic handled in selectBuildingType
+                }
+
+                if (this.step < this.totalSteps) {
+                    this.step++;
+                    this.updateUI();
+                } else {
+                    this.submitData();
+                }
+            },
+
+            prevStep: function() {
+                if (this.step === 3) {
+                    if (this.data.category === 'Gedung' && this.data.subCategory === 'Non-Hunian') {
+                        document.querySelectorAll('.step-content').forEach(e => e.classList.remove('active'));
+                        document.getElementById('step-2b').classList.add('active');
+                        return;
+                    }
+                }
+                
+                const step2b = document.getElementById('step-2b');
+                if (step2b.classList.contains('active')) {
+                    document.querySelectorAll('.step-content').forEach(e => e.classList.remove('active'));
+                    document.getElementById('step-2').classList.add('active');
+                    return;
+                }
+
+                if (this.step > 1) {
+                    this.step--;
+                    this.updateUI();
+                }
+            },
+
+            updateSummary: function() {
+                document.getElementById('sumCategory').textContent = this.data.category;
+                
+                let typeText = this.data.subCategory;
+                if (this.data.category === 'Gedung' && this.data.subCategory === 'Non-Hunian') {
+                    typeText += ` (${this.data.detailType})`;
+                } else if (this.data.category !== 'Gedung') {
+                    typeText = '-';
+                }
+                document.getElementById('sumType').textContent = typeText;
+                
+                document.getElementById('sumArea').textContent = this.data.area;
+                document.getElementById('sumDuration').textContent = this.data.duration;
+                document.getElementById('sumPackage').textContent = this.data.package;
+            },
+
+            submitData: function() {
+                const btn = document.getElementById('btnNext');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                btn.disabled = true;
+
+                /* 
+                 * GOOGLE SHEETS INTEGRATION
+                 * Replace the URL below with your Google Apps Script Web App URL
+                 */
+                const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE"; 
+
+                const payload = new FormData();
+                payload.append('category', this.data.category);
+                payload.append('subCategory', this.data.subCategory);
+                payload.append('detailType', this.data.detailType);
+                payload.append('area', this.data.area);
+                payload.append('duration', this.data.duration);
+                payload.append('package', this.data.package);
+                payload.append('clientName', this.data.clientName);
+                payload.append('clientEmail', this.data.clientEmail);
+                payload.append('clientPhone', this.data.clientPhone);
+                payload.append('timestamp', new Date().toLocaleString());
+
+                // SIMULATION
+                console.log("Submitting Data:", Object.fromEntries(payload));
+
+                setTimeout(() => {
+                    document.querySelectorAll('.step-content').forEach(e => e.classList.remove('active'));
+                    document.getElementById('step-success').classList.add('active');
+                    document.getElementById('wizardNav').style.display = 'none';
+                    showToast("Data sent successfully!");
+                    
+                    document.getElementById('calculator').scrollIntoView({behavior: 'smooth'});
+                }, 1500);
+            }
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            auth.init();
+            wizard.updateUI();
+        });
+
+    </script>
+</body>
+</html>
